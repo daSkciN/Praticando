@@ -1,0 +1,1 @@
+display2 = display.timeTick()
