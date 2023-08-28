@@ -1,1 +1,1 @@
-cd1
+  catalogo.removeCDeDvd("Acdc")

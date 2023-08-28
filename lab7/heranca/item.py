@@ -1,11 +1,9 @@
 class Item:
-  def __init__(self,titulo,tempreprod,diretor,possuo,comentario):
+  def __init__(self,titulo,tempreprod,possuo,comentario):
     self.__titulo = titulo
     self.__tempreprod = tempreprod
-    self.__diretor = diretor
-    self.__possuo = False
-    self.__comentario = ''
-    self.__catalogo = list()
+    self.__possuo = possuo
+    self.__comentario = comentario
   
   def getTitulo(self):
        return self.__titulo
@@ -37,21 +35,4 @@ class Item:
   def setComentario(self,novoComentario):
        self.__comentario = novoComentario
 
-  def adicionaDVDouCD(self,titulo,tempreprod,diretor):
-      self.__catalogo.append(titulo)
   
-  def listaDVDeCD(self):
-      for i in range(len(self.__catalogo)):
-          print(self.__catalogo[i])
-
-  def compareDVDeCD(self,artista):
-      if artista in self.__catalogo:
-          return True
-      else:
-          return False
-      
-  def removeCDeDvd(self,titulo):
-       if titulo in self.__catalogo:
-           self.__catalogo.remove(titulo)
-       else:
-           print("Esse titulo nao esta no catalogo")

@@ -1,40 +1,35 @@
 from cd import Cd
 from dvd import Dvd
 from item import Item
+from catalogo import Catalogo
 
 def main():
-  catalogoCdeDvd = Item('','','','','')
-  catalogoCd = Cd('','','','','')
-  catalogoDvd = Dvd('','','','','')
-  dvd1 = Dvd('Rambo',120,'Cesar',True,'ggwp')
-  cd1 = Cd('Slipknot',30,'John',True,'nada')
-  cd2 = Cd('Acdc',50,'Julius',True,'ou')
 
-  print('Lista de Dvds:')
-  catalogoDvd.adicionaDVDouCD(dvd1.getTitulo(),dvd1.getTempreprod(),'Jorge')
- 
+  catalogo = Catalogo()
+  dvd1 = Dvd('Rambo',120,True,'ggwp','Dante')
+  cd1 = Cd('Phamo',30,True,'nada','Slipknot',5)
+  cd2 = Cd('Tramoia',50,True,'ou','Acdc',8)
 
-  catalogoDvd.listaDVDeCD()
+  print('Lista de Dvds e Cds:')
+  catalogo.adicionaDVDouCD(dvd1)
 
-  print('Lista de Cds:')
-  catalogoCd.adicionaDVDouCD(cd1.getTitulo(),cd1.getTempreprod(),'Kleber')
+  catalogo.adicionaDVDouCD(cd1)
 
+  catalogo.adicionaDVDouCD(cd2)
 
-  catalogoCd.adicionaDVDouCD(cd2.getTitulo(),cd2.getTempreprod(),'jojo')
+  catalogo.listaDVDeCD()
 
-  catalogoCd.listaDVDeCD()
+  print(catalogo.compareDVDeCD('Acdc'))
 
-  print(catalogoCd.compareDVDeCD('Acdc'))
+  print(catalogo.compareDVDeCD('Tramoia'))
 
-  print(catalogoDvd.compareDVDeCD('Acdc'))
+  print(catalogo.compareDVDeCD('Rambo'))
 
-  print(catalogoDvd.compareDVDeCD('Rambo'))
+  catalogo.removeCDeDvd("Rambo")
 
-  catalogoCd.removeCDeDvd("007")
+  catalogo.removeCDeDvd("Acdc")
 
-  catalogoCd.removeCDeDvd("Acdc")
-
-  catalogoCd.listaDVDeCD()
+  catalogo.listaDVDeCD()
 
 
 
